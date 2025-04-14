@@ -1,0 +1,23 @@
+
+O
+java:S1068"-Remove this unused "hotelName" private field.(Ğ¼¡úÿÿÿÿ8¦§‚Ìá2
+R
+java:S1068"0Remove this unused "hotelAddress" private field.(Çæ®ùÿÿÿÿ8¨§‚Ìá2
+O
+java:S1068"-Remove this unused "roomTypes" private field.(°ß­Íûÿÿÿÿ8ª§‚Ìá2
+F
+java:S1068")Remove this unused "price" private field.(ìù¥ë8¬§‚Ìá2
+L
+java:S1068"*Remove this unused "rating" private field.(Â„½¨şÿÿÿÿ8²§‚Ìá2
+O
+java:S1068"-Remove this unused "amenities" private field.(§ìŒùÿÿÿÿ8¸§‚Ìá2
+Q
+java:S1068"/Remove this unused "description" private field.(ÇÓæâıÿÿÿÿ8º§‚Ìá2
+L
+java:S1068"/Remove this unused "contactInfo" private field.(İÉ¥8»§‚Ìá2
+P
+java:S1068"3Remove this unused "hotelCreateTime" private field.(Á•Ö¦8¼§‚Ìá2
+P
+java:S1068"3Remove this unused "hotelUpdateTime" private field.(âÊêé8½§‚Ìá2
+G
+java:S1068"*Remove this unused "status" private field.(½î×Ú8½§‚Ìá2

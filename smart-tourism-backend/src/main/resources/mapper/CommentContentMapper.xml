@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tourism.mapper.CommentContentMapper">
+    <!-- 基础结果映射 -->
+    <resultMap id="BaseResultMap" type="com.example.tourism.entity.CommentContent">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="content_id" property="contentId" />
+        <result column="content_type" property="contentType" />
+        <result column="content" property="content" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="audit_time" property="auditTime" />
+        <result column="audit_user_id" property="auditUserId" />
+        <result column="audit_remark" property="auditRemark" />
+        <result column="user_name" property="userName" />
+        <result column="user_avatar" property="userAvatar" />
+        <result column="content_title" property="contentTitle" />
+    </resultMap>
+    
+    <!-- 查询带扩展信息的评论内容 -->
+    <select id="selectCommentContentWithInfo" resultMap="BaseResultMap">
+        SELECT c.*, u.username as user_name, u.avatar as user_avatar,
+            CASE 
+                WHEN c.content_type = 'scenic' THEN s.name
+                WHEN c.content_type = 'hotel' THEN h.name
+                WHEN c.content_type = 'route' THEN r.route_name
+                WHEN c.content_type = 'travel' THEN t.title
+                ELSE '未知内容'
+            END as content_title
+        FROM comment_content c
+        LEFT JOIN user u ON c.user_id = u.user_id
+        LEFT JOIN scenic_spot s ON c.content_type = 'scenic' AND c.content_id = s.scenic_id
+        LEFT JOIN hotel h ON c.content_type = 'hotel' AND c.content_id = h.hotel_id
+        LEFT JOIN travel_route r ON c.content_type = 'route' AND c.content_id = r.route_id
+        LEFT JOIN travel_content t ON c.content_type = 'travel' AND c.content_id = t.id
+        <where>
+            <if test="params.keyword != null and params.keyword != ''">
+                AND (
+                    c.content LIKE CONCAT('%', #{params.keyword}, '%')
+                    OR u.username LIKE CONCAT('%', #{params.keyword}, '%')
+                )
+            </if>
+            <if test="params.status != null">
+                AND c.status = #{params.status}
+            </if>
+            <if test="params.contentType != null and params.contentType != ''">
+                AND c.content_type = #{params.contentType}
+            </if>
+        </where>
+        ORDER BY c.create_time DESC
+    </select>
+</mapper> 

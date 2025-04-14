@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tourism.mapper.ScenicSpotMapper">
+
+    <!-- 基础结果映射 -->
+    <resultMap id="BaseResultMap" type="com.example.tourism.entity.ScenicSpot">
+        <id column="scenic_id" property="scenicId" />
+        <result column="name" property="name" />
+        <result column="location" property="location" />
+        <result column="ticket_price" property="ticketPrice" />
+        <result column="description" property="description" />
+        <result column="opening_hours" property="openingHours" />
+        <result column="contact_info" property="contactInfo" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+    </resultMap>
+    
+    <!-- 所有字段 -->
+    <sql id="Base_Column_List">
+        scenic_id, name, location, ticket_price, description, opening_hours, contact_info, 
+        create_time, update_time, status
+    </sql>
+
+</mapper> 

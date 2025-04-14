@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4fe1b4e-5e0d-4a5f-9eff-05eef60d161d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2vTMu25Hkx9ngIALGB1IJqs0CUU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../yitaohui/yitaohui" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.37179488" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.SmartTourismApplication (1)">
+    <configuration name="SmartTourismApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="smart-tourism-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tourism.SmartTourismApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmartTourismApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="smart-tourism" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tourism.SmartTourismApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4fe1b4e-5e0d-4a5f-9eff-05eef60d161d" name="Changes" comment="" />
+      <created>1744164858033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744164858033</updated>
+      <workItem from="1744164863436" duration="8882000" />
+      <workItem from="1744184512850" duration="4697000" />
+      <workItem from="1744219234199" duration="3236000" />
+      <workItem from="1744285078323" duration="593000" />
+      <workItem from="1744376125951" duration="12148000" />
+      <workItem from="1744429995390" duration="4313000" />
+      <workItem from="1744462169889" duration="2498000" />
+      <workItem from="1744553850215" duration="9588000" />
+      <workItem from="1744631490836" duration="270000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

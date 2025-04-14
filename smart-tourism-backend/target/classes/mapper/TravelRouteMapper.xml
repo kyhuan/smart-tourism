@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tourism.mapper.TravelRouteMapper">
+
+    <!-- 基础结果映射 -->
+    <resultMap id="BaseResultMap" type="com.example.tourism.entity.TravelRoute">
+        <id column="route_id" property="routeId" />
+        <result column="route_name" property="routeName" />
+        <result column="duration" property="duration" />
+        <result column="price" property="price" />
+        <result column="start_point" property="startPoint" />
+        <result column="highlights" property="highlights" />
+        <result column="tags" property="tags" />
+        <result column="rating" property="rating" />
+        <result column="sold_count" property="soldCount" />
+        <result column="description" property="description" />
+        <result column="spots" property="spots" />
+        <result column="schedule" property="schedule" />
+        <result column="inclusion" property="inclusion" />
+        <result column="exclusion" property="exclusion" />
+        <result column="notes" property="notes" />
+        <result column="cover_image" property="coverImage" />
+        <result column="images" property="images" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 分页查询旅游路线 -->
+    <select id="selectRoutePage" resultMap="BaseResultMap">
+        SELECT *
+        FROM travel_route
+        WHERE status = 1
+        <if test="keyword != null and keyword != ''">
+            AND (
+                route_name LIKE CONCAT('%', #{keyword}, '%')
+                OR description LIKE CONCAT('%', #{keyword}, '%')
+                OR highlights LIKE CONCAT('%', #{keyword}, '%')
+            )
+        </if>
+        <if test="duration != null">
+            AND duration = #{duration}
+        </if>
+        <if test="theme != null and theme != ''">
+            AND tags LIKE CONCAT('%', #{theme}, '%')
+        </if>
+        ORDER BY sold_count DESC, rating DESC
+    </select>
+
+    <!-- 获取热门旅游路线 -->
+    <select id="selectHotRoutes" resultMap="BaseResultMap">
+        SELECT *
+        FROM travel_route
+        WHERE status = 1
+        ORDER BY sold_count DESC, rating DESC
+        LIMIT #{limit}
+    </select>
+</mapper> 
