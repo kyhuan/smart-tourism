@@ -72,4 +72,9 @@ public interface OrderService extends IService<OrderInfo> {
      * 获取用户订单统计
      */
     OrderStatistics getOrderStatistics(String userId);
+    
+    /**
+     * 获取所有订单统计数据
+     */
+    OrderStatistics getAllOrderStatistics(String startDate, String endDate);
 } 

@@ -63,4 +63,12 @@ public class OrderController {
     public Result<OrderStatistics> getOrderStatistics(@PathVariable String userId) {
         return Result.success(orderService.getOrderStatistics(userId));
     }
+    
+    @GetMapping("/statistics")
+    @ApiOperation("获取所有订单统计数据")
+    public Result<OrderStatistics> getAllOrderStatistics(
+            @RequestParam(required = false) String startDate,
+            @RequestParam(required = false) String endDate) {
+        return Result.success(orderService.getAllOrderStatistics(startDate, endDate));
+    }
 } 

@@ -76,6 +76,13 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
             scenicSpot.setStatus(1);
         }
         
+        // 生成唯一ID
+        if (scenicSpot.getScenicId() == null || scenicSpot.getScenicId().isEmpty()) {
+            // 生成一个UUID作为景点ID
+            String uuid = java.util.UUID.randomUUID().toString().replace("-", "").substring(0, 20);
+            scenicSpot.setScenicId(uuid);
+        }
+        
         return save(scenicSpot);
     }
 

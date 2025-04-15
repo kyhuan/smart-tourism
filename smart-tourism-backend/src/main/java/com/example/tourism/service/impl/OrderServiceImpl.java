@@ -172,6 +172,59 @@ public class OrderServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo> im
     }
 
     @Override
+    public OrderStatistics getAllOrderStatistics(String startDate, String endDate) {
+        OrderStatistics statistics = new OrderStatistics();
+        
+        // 构建查询条件
+        LambdaQueryWrapper<OrderInfo> wrapper = new LambdaQueryWrapper<>();
+        
+        // 如果有日期范围，添加日期条件
+        if (startDate != null && !startDate.isEmpty() && endDate != null && !endDate.isEmpty()) {
+            wrapper.between(OrderInfo::getOrderDate, startDate, endDate);
+        }
+        
+        // 查询总订单数
+        long totalOrders = this.count(wrapper);
+        statistics.setTotalOrders((int) totalOrders);
+        
+        // 查询待处理订单数
+        LambdaQueryWrapper<OrderInfo> pendingWrapper = new LambdaQueryWrapper<>();
+        if (startDate != null && !startDate.isEmpty() && endDate != null && !endDate.isEmpty()) {
+            pendingWrapper.between(OrderInfo::getOrderDate, startDate, endDate);
+        }
+        pendingWrapper.eq(OrderInfo::getOrderStatus, 0);
+        long pendingOrders = this.count(pendingWrapper);
+        statistics.setPendingOrders((int) pendingOrders);
+        
+        // 查询已完成订单数
+        LambdaQueryWrapper<OrderInfo> completedWrapper = new LambdaQueryWrapper<>();
+        if (startDate != null && !startDate.isEmpty() && endDate != null && !endDate.isEmpty()) {
+            completedWrapper.between(OrderInfo::getOrderDate, startDate, endDate);
+        }
+        completedWrapper.eq(OrderInfo::getOrderStatus, 1);
+        long completedOrders = this.count(completedWrapper);
+        statistics.setCompletedOrders((int) completedOrders);
+        
+        // 查询已取消订单数
+        LambdaQueryWrapper<OrderInfo> canceledWrapper = new LambdaQueryWrapper<>();
+        if (startDate != null && !startDate.isEmpty() && endDate != null && !endDate.isEmpty()) {
+            canceledWrapper.between(OrderInfo::getOrderDate, startDate, endDate);
+        }
+        canceledWrapper.eq(OrderInfo::getOrderStatus, 2);
+        long canceledOrders = this.count(canceledWrapper);
+        statistics.setCanceledOrders((int) canceledOrders);
+        
+        // 查询已完成订单的总金额
+        List<OrderInfo> completedOrderList = this.list(completedWrapper);
+        BigDecimal totalAmount = completedOrderList.stream()
+            .map(OrderInfo::getTotalPrice)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+        statistics.setTotalAmount(totalAmount);
+        
+        return statistics;
+    }
+
+    @Override
     public Map<String, Object> createOrder(String userId, String productId, String productType, Integer quantity, Map<String, Object> orderData) {
         // 创建订单对象
         OrderInfo orderInfo = new OrderInfo();
