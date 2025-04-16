@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4fe1b4e-5e0d-4a5f-9eff-05eef60d161d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tourism/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tourism/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/impl/ScenicSpotServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tourism/service/impl/ScenicSpotServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tourism/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tourism/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-tourism-system-admin" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-tourism-system-admin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-tourism-system-portal" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-tourism-system-portal" afterDir="false" />
     </list>
@@ -84,7 +79,8 @@
       <workItem from="1744631490836" duration="270000" />
       <workItem from="1744724771421" duration="1535000" />
       <workItem from="1744727772560" duration="2212000" />
-      <workItem from="1744745529399" duration="4602000" />
+      <workItem from="1744745529399" duration="5260000" />
+      <workItem from="1744769541908" duration="754000" />
     </task>
     <servers />
   </component>
